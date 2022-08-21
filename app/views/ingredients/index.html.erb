@@ -1,0 +1,21 @@
+<h1>All ingredients</h1>
+
+
+<table>
+  <tr>
+    <td>&nbsp;</td>
+    <td>Protein</td>
+    <td>Carbohydrate</td>
+    <td>Lipid</td>
+    <td>Kcal/100g</td>
+  </tr>
+  <% @ingredients.each do |ingredient| %>
+    <tr>
+      <td><%= ingredient.name %></td>
+      <td><%= ingredient.protein %></td>
+      <td><%= ingredient.carbohydrate %></td>
+      <td><%= ingredient.lipid %></td>
+      <td><%= ingredient.kcal %></td>
+    </tr>
+<% end %>
+</table>

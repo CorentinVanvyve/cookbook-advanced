@@ -1,0 +1,14 @@
+<h1><%= @recipe.name %></h1>
+
+<ul>
+  <% @recipe.ingredients.each do |ingredient| %>
+    <li><%= ingredient.name %>
+    <% dose = Dose.find_by(recipe: @recipe, ingredient: ingredient) %><br>
+     <%= link_to "delete", dose_path(dose), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove ?"}, class: 'text-danger' %>
+  <% end %>
+</ul>
+
+
+<br><li><%= link_to "Edit", edit_recipe_path(@recipe) %></li>
+<br><li> <%= link_to "delete", recipe_path(@recipe), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></li>
+<br><li><%= link_to "home", recipes_path()%></li>

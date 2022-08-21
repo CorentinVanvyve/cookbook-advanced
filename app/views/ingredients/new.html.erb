@@ -1,0 +1,9 @@
+<%= simple_form_for(@ingredient) do |f|%>
+    <%= f.input :name %>
+    <%= f.input :protein %>
+    <%= f.input :carbohydrate %>
+    <%= f.input :lipid %>
+    <%= f.input :kcal %>
+    <%= f.input :measure, collection: ["ml","gr"] %>
+    <%= f.submit  %>
+  <% end %>

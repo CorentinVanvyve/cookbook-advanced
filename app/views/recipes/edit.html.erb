@@ -1,0 +1,10 @@
+<h1>Change your recipe</h1>
+
+<%= simple_form_for(@recipe) do |f|%>
+    <%= f.input :name %>
+    <%= f.submit  %>
+  <% end %>
+
+<%= link_to "Add a dose to this recipe", new_recipe_dose_path(@recipe) %>
+<br>
+<li><%= link_to "home", recipes_path()%></li>
