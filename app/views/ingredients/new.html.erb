@@ -1,9 +1,29 @@
+<section class="section-new-ingredient">
 <%= simple_form_for(@ingredient) do |f|%>
-    <%= f.input :name %>
-    <%= f.input :protein %>
-    <%= f.input :carbohydrate %>
-    <%= f.input :lipid %>
-    <%= f.input :kcal %>
-    <%= f.input :measure, collection: ["ml","gr"] %>
-    <%= f.submit  %>
+    <div style="width: 100%;">
+        <%= f.input :name, placeholder: "Name" %>
+    </div>
+    <div class="macro-new">
+      <div style="width: 30%;">
+          <%= f.input :protein, placeholder: "Protein" %>
+      </div>
+      <div style="width: 30%;">
+          <%= f.input :carbohydrate, placeholder: "Carbohydrate" %>
+      </div>
+      <div style="width: 30%;">
+          <%= f.input :lipid, placeholder: "Lipid" %>
+      </div>
+    </div>
+    <div class="macro-new">
+      <div style="width: 48.5%;">
+          <%= f.input :kcal, placeholder: "Kcal" %>
+      </div>
+      <div style="width: 48.5%">
+          <%= f.input :measure, collection: ["ml","gr"]%>
+      </div>
+    </div>
+    <div style="width: 100%;" class="square-button">
+      <%= f.submit  %>
+    </div>
   <% end %>
+</section>

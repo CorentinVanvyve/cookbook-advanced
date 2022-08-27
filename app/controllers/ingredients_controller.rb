@@ -39,6 +39,6 @@ class IngredientsController < ApplicationController
   end
 
   def ingredient_params
-    params.require(:ingredient).premit(:name, :lipid, :carbohydrate, :protein, :kcal, :measure)
+    params.require(:ingredient).permit(:name, :lipid, :carbohydrate, :protein, :kcal, :measure)
   end
 end
