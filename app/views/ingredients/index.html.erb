@@ -11,7 +11,7 @@
   </tr>
   <% @ingredients.each do |ingredient| %>
     <tr>
-      <td><%= ingredient.name %></td>
+      <td><%= link_to ingredient.name, ingredient_path(ingredient) %></td>
       <td><%= ingredient.protein %></td>
       <td><%= ingredient.carbohydrate %></td>
       <td><%= ingredient.lipid %></td>

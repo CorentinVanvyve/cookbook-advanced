@@ -1,0 +1,17 @@
+<h1><%= @ingredient.name %></h1>
+<table>
+  <tr>
+    <td>Protein</td>
+    <td>Carbohydrate</td>
+    <td>Lipid</td>
+    <td>Kcal/100g</td>
+  </tr>
+    <tr>
+      <td><%= @ingredient.protein %></td>
+      <td><%= @ingredient.carbohydrate %></td>
+      <td><%= @ingredient.lipid %></td>
+      <td><%= @ingredient.kcal %></td>
+    </tr>
+</table>
+
+<%= link_to "Destroy this ingredient" , ingredient_path(@ingredient), data: { turbo_method: :delete, turbo_confirm: "Sure ?" }%>

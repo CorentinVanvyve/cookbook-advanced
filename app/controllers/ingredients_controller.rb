@@ -1,10 +1,12 @@
+
 class IngredientsController < ApplicationController
-  before_action :set_ingredient, only: [:show, :edit, :update, :destroy]
+  before_action :set_ingredient, only: [:edit, :update, :destroy]
   def index
     @ingredients = Ingredient.all
   end
 
   def show
+    @ingredient = Ingredient.find(params[:id])
   end
 
   def new
@@ -18,7 +20,6 @@ class IngredientsController < ApplicationController
   end
 
   def edit
-
   end
 
   def update
@@ -26,9 +27,9 @@ class IngredientsController < ApplicationController
     redirect_to ingredient_path(@ingredient)
   end
 
-  def delete
+  def destroy
     @ingredient.destroy
-    redirect_to ingredients_path()
+    redirect_to ingredients_path, status: :see_other
   end
 
   private
